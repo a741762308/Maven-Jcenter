@@ -157,10 +157,10 @@ android.libraryVariants.all { variant ->
 #提交项目到Jcenter
 
 我们点开我们刚刚提交项目的主页
-![](screenshot/2.png)
+![](screenshot/2.png)<br>
 点击右下角的add to jcenter按钮
-![](screenshot/4.png)
-填写Comments 点击Send等待审核
+![](screenshot/4.png)<br>
+填写Comments 点击Send等待审核<br>
 大约1小时左右审核便会通过，就可以在build.gradle 中使用我们的库了
 ```java
 dependencies {
@@ -172,7 +172,7 @@ dependencies {
 }
 ```
 #感谢
-[Android Studio发布项目到Jcenter](http://blog.saymagic.cn/2015/02/16/release-library-to-jcenter.html)
+[Android Studio发布项目到Jcenter](http://blog.saymagic.cn/2015/02/16/release-library-to-jcenter.html)<br>
 [Android 项目打包到 JCenter 的坑](http://www.jcodecraeer.com/a/anzhuokaifa/Android_Studio/2015/0515/2873.html)
 
 #License
