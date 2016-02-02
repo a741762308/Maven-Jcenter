@@ -1,8 +1,8 @@
 :running: 使用Gradle发布aar项目到JCenter仓库:running:
 #注册账号
-在https://bintray.com/上注册一个账号,可以使用github账号注册（打不开的请自行翻墙）
+在 https://bintray.com/ 上注册一个账号,可以使用github账号注册（打不开的请自行翻墙）
 登录成功后进去用户中心获取apikey，见下图
-![]()
+![](screenshot/3.png)
 #配置
 ##local.properties
 在该文件尾中输入
@@ -17,7 +17,7 @@
  classpath "com.jfrog.bintray.gradle:gradle-bintray-plugin:1.5"
  classpath 'com.github.dcendents:android-maven-gradle-plugin:1.3'
 ```
-详情请点[这里]()
+详情请点[这里](build.gradle)
 ###你的Module中
 ```java
  apply plugin: 'com.github.dcendents.android-maven'
@@ -97,7 +97,7 @@ bintray {
 ```java
  gradle build
 ```
-不识别的请点[这里]()配置环境变量
+不识别的请点[这里](http://jingyan.baidu.com/article/cbcede072a958202f40b4d97.html?st=2&os=0&bd_page_type=1&net_type=1)配置环境变量
 这里会出现比较坑的情况,可以参考[Android 项目打包到 JCenter 的坑](http://www.jcodecraeer.com/a/anzhuokaifa/Android_Studio/2015/0515/2873.html)
 
 - 编码GBK不可映射字符
@@ -145,14 +145,50 @@ android.libraryVariants.all { variant ->
 }
 ```
 
-完整的这里参考[这里]()
+完整的这里参考[这里](utils/build.gradle)
 ##gradle bintrayUpload
 当gradle build出现SUCCESS时,我们执行如下命令
 ```java
  gradle bintrayUpload
 ```
-上传成功后
+上传成功后，就会在bintray的maven仓库下看到我们上传的Library
+![](screenshot/1.png)
+#提交项目到Jcenter
 
+我们点开我们刚刚提交项目的主页
+![](screenshot/2.png)
+点击右下角的add to jcenter按钮
+![](screenshot/4.png)
+填写Comments 点击Send等待审核
+大约1小时左右审核便会通过，就可以在build.gradle 中使用我们的库了
+```java
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.1.1'
+//    compile project(':utils')
+    compile 'com.jsqix.utils:utils:1.0.0'
+}
+```java
+#感谢
+[Android Studio发布项目到Jcenter](http://blog.saymagic.cn/2015/02/16/release-library-to-jcenter.html)
+[Android 项目打包到 JCenter 的坑](http://www.jcodecraeer.com/a/anzhuokaifa/Android_Studio/2015/0515/2873.html)
+
+#License
+
+    Copyright 2015 a741762308
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
 
 
 
