@@ -170,7 +170,7 @@ dependencies {
 //    compile project(':utils')
     compile 'com.jsqix.utils:utils:1.0.0'
 }
-```java
+```
 #感谢
 [Android Studio发布项目到Jcenter](http://blog.saymagic.cn/2015/02/16/release-library-to-jcenter.html)
 [Android 项目打包到 JCenter 的坑](http://www.jcodecraeer.com/a/anzhuokaifa/Android_Studio/2015/0515/2873.html)
