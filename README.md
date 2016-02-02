@@ -1,4 +1,5 @@
-:running: 使用Gradle发布aar项目到JCenter仓库:running:
+:running:使用Gradle发布aar项目到JCenter仓库:running:
+====
 #注册账号
 在 https://bintray.com/ 上注册一个账号,可以使用github账号注册（打不开的请自行翻墙）
 登录成功后进去用户中心获取apikey，见下图
