@@ -6,7 +6,21 @@ import java.util.regex.Pattern;
 
 public class StringUtils {
 
-    static DecimalFormat df = new DecimalFormat(".00");
+    static DecimalFormat df = new DecimalFormat("######0.00");
+
+    /***
+     * @param obj
+     * @return
+     */
+    public static boolean isNull(Object obj) {
+        if (obj == null)
+            return true;
+        if (obj instanceof String) {
+            String input = obj + "";
+            return isEmpty(input);
+        }
+        return true;
+    }
 
     public static boolean isEmpty(String input) {
         if (input == null || "".equals(input))
@@ -106,6 +120,13 @@ public class StringUtils {
         Pattern p = Pattern.compile(regExp);
         Matcher m = p.matcher(paramString);
         return m.matches();
+    }
+
+    public static boolean notPhone(String paramString) {
+        String regExp = "^1\\d{10}$";
+        Pattern p = Pattern.compile(regExp);
+        Matcher m = p.matcher(paramString);
+        return !m.matches();
     }
 
     public static boolean isEmail(String paramString) {
