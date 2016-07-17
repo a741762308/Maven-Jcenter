@@ -14,6 +14,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class FrameApplication extends Application {
+    private static ErrorHandler crashHandler = null;
     private static FrameApplication mInstance;
     private static LinkedList<Activity> mList = new LinkedList<Activity>();
     long exitTime = 0;
@@ -86,6 +87,9 @@ public class FrameApplication extends Application {
         return FrameApplication.mInstance;
     }
 
+    public static void setCrashHandler(final Context c) {
+        FrameApplication.crashHandler.setToErrorHandler(c);
+    }
 
 
     private String getAppName(int pID) {
@@ -130,6 +134,7 @@ public class FrameApplication extends Application {
     public void onCreate() {
         super.onCreate();
         FrameApplication.mInstance = this;
+        FrameApplication.crashHandler = ErrorHandler.getInstance();
     }
 
 

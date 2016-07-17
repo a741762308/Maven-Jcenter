@@ -273,5 +273,17 @@ public class LogWriter {
             LogWriter.LogToFile(LogWriter.DEBUG_TAG, msg);
         }
     }
+    public static void crash(final String DEBUG_TAG, final String msg)
+    {
+        Log.e(DEBUG_TAG, msg);
+        LogWriter.LogToFile(DEBUG_TAG, msg);
+    }
+
+    public static void crash(final String msg)
+    {
+        Log.e(DEBUG_TAG, msg);
+        LogWriter.LogToFile(LogWriter.DEBUG_TAG, msg);
+    }
+
 
 }

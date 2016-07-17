@@ -13,6 +13,7 @@ public class BaseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         FrameApplication.addToActivityList(this);
+        FrameApplication.setCrashHandler(this);
         aCache = ACache.get(this);
     }
 
